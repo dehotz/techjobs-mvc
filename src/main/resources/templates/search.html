@@ -36,6 +36,40 @@
 
     <hr />
 
+    <div th:if="${items}">
+
+    <h3 th:text="${items.size()} + ' Result(s)'">Results</h3>
+
+        <div>
+
+            <table th:each="item, idx : ${items}" class="job-listing">
+                <tr>
+                    <td>Position Type</td>
+                    <td th:text="${item.get('position type')}"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td th:text="${item.get('name')}"></td>
+                </tr>
+                <tr>
+                    <td>Employer</td>
+                    <td th:text="${item.get('employer')}"></td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td th:text="${item.get('location')}"></td>
+                </tr>
+                <tr>
+                    <td>Core Competency</td>
+                    <td th:text="${item.get('core competency')}"></td>
+                </tr>
+            </table>
+
+
+        </div>
+
+    </div>
+
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
 </div>
